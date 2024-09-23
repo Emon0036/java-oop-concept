@@ -1,0 +1,59 @@
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class sorting implements Comparable<sorting> {
+
+    String name;
+    int id;
+    double cgpa;
+
+    public sorting(String name , int id , double cgpa){
+        this.name = name ;
+        this.id = id;
+        this.cgpa = cgpa;
+    }
+
+    public int compareTo(sorting a){
+        if(this.id > a.id){
+            return 1;
+        }
+        else if(this.id < a.id){
+            return -1;
+        }
+
+        else{
+            if(this.cgpa>a.cgpa){
+                return 1;
+            }
+            else if(this.cgpa < a.cgpa){
+                return -1;
+            }
+            else{
+                    return this.name.compareTo(a.name);
+            }
+                          
+            }
+            
+        }
+    }
+    
+
+
+class Main{
+    public static void main(String[] args) {
+        ArrayList <sorting> sr = new ArrayList<>();
+
+        sr.add(new sorting("Emon" , 1212, 3.17));
+        sr.add(new sorting("Ratul" , 1212, 3.17));
+        sr.add(new sorting("Ruhul" , 1212, 3.17));
+        sr.add(new sorting("Anik" , 1212, 3.17));
+
+        Collections.sort(sr);
+
+        for(sorting s:sr) {
+            System.out.println(s.name+" "+s.id + " "+s.cgpa);
+            
+        }}
+
+    }
+
