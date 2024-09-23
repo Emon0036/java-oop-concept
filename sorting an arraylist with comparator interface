@@ -1,0 +1,56 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
+public class sorting2  {
+
+    String name;
+    int id;
+    double cgpa;
+
+    public sorting2(String name , int id , double cgpa){
+        this.name = name ;
+        this.id = id;
+        this.cgpa = cgpa;
+    }
+
+           
+    }
+    
+
+
+class Main{
+    public static void main(String[] args) {
+        ArrayList <sorting2> sr = new ArrayList<>();
+
+        sr.add(new sorting2("Emon" , 1212, 3.17));
+        sr.add(new sorting2("Ratul" , 12124, 3.17));
+        sr.add(new sorting2("Ruhul" , 12123, 3.17));
+        sr.add(new sorting2("Anik" , 12125, 3.17));
+
+        Collections.sort(sr,new Comparator<sorting2>(){
+            public int compare(sorting2 a1 , sorting2 a2){
+                if(a1.id > a2.id){
+                    return 1;
+                }
+                else if(a1.id < a2.id){
+                    return -1;
+                }
+                else {
+                    return 0;
+
+                }
+
+            }
+        });
+        
+        
+
+        for(sorting2 s:sr) {
+            System.out.println(s.name+" "+s.id + " "+s.cgpa);
+            
+        }
+    }
+
+    }
+
